@@ -5,8 +5,11 @@
 
 ## 第一阶段
 学习 Haskell, 
+
 参考教程: Learn You a Haskell for Great Good!
+
 Haskell 的参考是: https://learnyouahaskell.com/
+
 预估 14 章的内容，花费 2 - 3 周, 记录在 learn_you_a_haskell_for_great_good
 
 chapter 1 √
