@@ -19,3 +19,18 @@ chapter 2 √
 chapter 3 √
 
 chapter 4 √
+
+chapter 5
+
+从 chapter 5 (Recursion) 这一节开始逐渐体会到 Haskell 的函数式编程语言和其他命令式编程语言的区别，imperative language 主要告诉一个函数: How you get it, 而 Haskell 主要在定义 what it is.
+
+一个目前遇到很典型的例子，用 recursion(递归)的方式来定义 maximum
+```haskell
+maximum' :: (Ord a) => [a] -> a
+maximum' [] = error "Empty list error!"
+maximum' [x] = x
+maximum' (x: xs)
+    | x > maxTail = x
+    | otherwise = maxTail
+    where maxTail = maximum' xs
+```
