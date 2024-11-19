@@ -20,7 +20,7 @@ chapter 3 √
 
 chapter 4 √
 
-chapter 5
+chapter 5 √
 
 从 chapter 5 (Recursion) 这一节开始逐渐体会到 Haskell 的函数式编程语言和其他命令式编程语言的区别，imperative language 主要告诉一个函数: How you get it, 而 Haskell 主要在定义 what it is.
 
@@ -34,3 +34,5 @@ maximum' (x: xs)
     | otherwise = maxTail
     where maxTail = maximum' xs
 ```
+
+chapter 6
