@@ -35,4 +35,14 @@ maximum' (x: xs)
     where maxTail = maximum' xs
 ```
 
+更经典的是优雅地实现快排，其中比列表的 head 要大或者小的 list 通过 list comprehension 实现
+```haskell
+quickSort::(Ord a) => [a] -> [a]
+quickSort [] = []
+quickSort (x: xs) = 
+    let smallerSort = quickSort [a | a <- xs, a < x]
+        largerSort  = quickSort [a | a <- xs, a >= x]
+    in smallerSort ++ [x] ++ largerSort
+```
+
 chapter 6
