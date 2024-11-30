@@ -46,3 +46,10 @@ quickSort (x: xs) =
 ```
 
 chapter 6
+
+## 第二阶段
+
+和第一阶段同时进行，计划是看完 31 章的 《Category Theory for Programmers》
+对于每一章的内容进行总结和习题解答。
+
+Chapter 1. Category: The Essence of Composition √
