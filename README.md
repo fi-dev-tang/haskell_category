@@ -53,3 +53,5 @@ chapter 6
 对于每一章的内容进行总结和习题解答。
 
 Chapter 1. Category: The Essence of Composition √
+
+Chapter 2. Types and Functions 
