@@ -54,4 +54,6 @@ chapter 6
 
 Chapter 1. Category: The Essence of Composition √
 
-Chapter 2. Types and Functions 
+Chapter 2. Types and Functions √
+
+Chapter 3. Categories Great and Small
