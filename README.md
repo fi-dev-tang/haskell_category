@@ -56,4 +56,8 @@ Chapter 1. Category: The Essence of Composition √
 
 Chapter 2. Types and Functions √
 
-Chapter 3. Categories Great and Small
+Chapter 3. Categories Great and Small √
+
+Chapter 4. Kleisli Categories
+
+第 4 章关于 negate 函数 log 副作用的例子非常经典，体现了 Separation of Cocern(SoC) 的思想，关于第 4 章的要点将分为两个 .md 总结。
