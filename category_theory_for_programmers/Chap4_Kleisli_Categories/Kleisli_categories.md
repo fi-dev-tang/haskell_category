@@ -76,3 +76,44 @@ template<class A> Writer<A> identity(A x){
 这一构造可以推广到任意的 monoid，而不只是 string monoid。
 我们可以在 compose 中使用 mappend 代替 +，在 identity 中使用 mempty 代替 "", 
 logging 库的写法更加general，唯一的限制是要求 log 具有 monoidal 性质。
+
+# 4.2 Haskell 中的 Writer
+Haskell 中定义 Writer 成为一个类型别名。
+态射是从任意类型 a 到某个 Writer 类型的映射
+映射的复合使用 fish operator(>=>)
+```haskell
+type Writer a = (a, string)
+-- 态射: a -> Writer b
+
+-- 类型的复合: fish operator
+-- 对类型的定义使用 lambda 表达式
+(>=>) :: (a -> Writer b) -> (b -> Writer c) -> (a -> Writer c)
+m1 >=> m2 = \x ->
+            let (y, s1) = m1 x
+                (z, s2) = m2 y
+            in (z, s1 ++ s2)
+```
+结果是一个接受一个参数 x 的 lambda 函数。Haskell 中的 lambda 函数是一种创建匿名函数的方式，即没有具体名称的函数。
+反斜杠 \ 用来表示 lambda，后面跟参数列表和箭头 -> 再后面是函数体
+
+C++里的 accessor(访问器)是类成员函数 getter, setter 等。提供了一种控制对象内部状态的访问方式，有助于实现封装这一原则。
+Haskell 由于纯函数特性，通常不会直接使用类似C++中的 getter 和 setter 来访问或修改数据结构的字段。
+Haskell 更多依赖于不可变的数据结构和模式匹配来结构数据，对于可变状态，Haskell提供了诸如 State Monad 的抽象来处理状态变化。
+
+```haskell
+-- 范畴中的 identity
+return :: a -> Writer a
+return x = (x, "")
+
+-- 下面实现之前提到的 toUpper 和 toWords
+upCase :: String -> Writer String
+upCase s = (map toUpper s, "upCase ")
+
+toWords :: String -> Writer [String]
+toWords s = (words s, "toWords ")
+
+-- 最后复合
+process :: String -> Writer [String]
+process = upCase >=> toWords
+```
+
