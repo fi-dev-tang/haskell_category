@@ -117,3 +117,13 @@ process :: String -> Writer [String]
 process = upCase >=> toWords
 ```
 
+# 4.3 Kleisli 范畴
+这是一个 Kleisli 范畴，是基于 Monad 的范畴。
+一个 Kleisli 范畴的对象是底层编程语言的类型，从类型 A 到类型 B 的态射是那些从 A 到通过某种装饰(embellishment) 从 B 派生出的类型的函数。
+每个 Kleisli 范畴定义了自己组合这些态射的方式，以及相对于这种组合的 identity 态射。
+不精确的术语 embellishment 对应于范畴中的一个概念 ———— 内函子(endofunctor)。
+
+Writer Monad 是一个更通用机制的例子，该机制可以在纯计算中嵌入 effect。
+之前看到用集合范畴建模编程语言的类型和函数。这里将模型扩展到了一个稍微不同的范畴。
+一个态射由装饰后的函数表示，它们的组合不仅是将一个函数的输出传递给另一个函数的输入，而是多了一个可以操作的自由度，组合本身。
+composition 带来的自由度是使得指称语义成为可能的自由度。
