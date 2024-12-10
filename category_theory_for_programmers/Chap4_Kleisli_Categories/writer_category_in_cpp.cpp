@@ -72,7 +72,7 @@ Writer<vector<string>> process(string s){
 
 // 定义第二组复合: compose(negate, isEven)
 Writer<bool> isOdd(int n){
-    return compose<int, bool, bool>(isEven, my_namespace::negate)(n);
+    return compose<int, bool, bool>(isEven, my_namespace::negate)(n); 
 }
 
 int main(){

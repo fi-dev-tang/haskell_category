@@ -65,3 +65,6 @@ Chapter 4. Kleisli Categories √
 Challenge里面提到的 optional 模板类，和 rust 实现的 Option<>{Some, None} 非常类似。
 
 Chapter 5. Products and Coproducts
+
+定义范畴中两个对象a, b 的乘积 (笛卡尔积(a, b)), 分别定义出 (a, b) 到 a 和 b 的投影 p, q
+同时对偶地定义范畴中两个对象 a, b 的 coproduct, 理解成injection a -> (a, b) 和 b -> (a, b)
